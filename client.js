@@ -1,4 +1,3 @@
-console.log('hello world 2');
 const pages = [ 
    {
     id: 0,

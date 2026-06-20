@@ -216,4 +216,12 @@ function changePage(direction) {
   });
 }
 
-renderPage()
+function preloadImages() {
+    pages.forEach(page => {
+        const img = new Image();
+        img.src = page.imageUrl;
+    });
+}
+
+preloadImages();
+renderPage();

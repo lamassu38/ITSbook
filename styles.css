@@ -180,3 +180,37 @@ i {
     transform: translateX(100%);
 }
 
+@media (max-width: 768px) {
+
+    body{
+        padding:10px;
+        align-items:flex-start;
+    }
+
+    .book-wrapper{
+        width:100%;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "book book"
+            "prev next";
+        justify-items:center;
+        gap:12px;
+    }
+
+    .book{
+        grid-area:book;
+        width:100%;
+        max-width:100%;
+        height:auto;
+    }
+
+    #prev-btn{
+        grid-area:prev;
+    }
+
+    #next-btn{
+        grid-area:next;
+    }
+
+}

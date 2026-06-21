@@ -64,17 +64,17 @@ const pages = [
   type: "story",
   imageUrl: "images/cristianbeentestedfour.png",
 
-  text: `Mientras Erika obtenía una pequeña muestra de sangre, Cristian comenzó a sentirse más tranquilo.
+  text: `<p>Mientras Erika obtenía una pequeña muestra de sangre, Cristian comenzó a sentirse más tranquilo.</p>
 
-💭 Cristian
+  <h4>💭 Cristian </h4>
 
-Sé que esto es lo correcto.
+  <p> Sé que esto es lo correcto.</p>
 
-Queremos empezar esta nueva etapa con tranquilidad.
+  <p>Queremos empezar esta nueva etapa con tranquilidad.</p>
 
-💭 Angélica
+  <h4>💭 Angélica</h4>
 
-Hacernos estas pruebas también es una forma de cuidarnos y demostrar cuánto nos importa nuestro bienestar.`
+  <p>Hacernos estas pruebas también es una forma de cuidarnos y demostrar cuánto nos importa nuestro bienestar.</p>`
 
 },
 {
@@ -111,99 +111,113 @@ Hacernos estas pruebas también es una forma de cuidarnos y demostrar cuánto no
   },
 ]
 
-const pageImage= document.getElementById("page-image")
-const pageTitle = document.getElementById("page-title")
-const pageSubtitle = document.getElementById("page-subtitle")
-const storyBox = document.getElementById("story-box")
-const pageText = document.getElementById("page-text")
-const speaker = document.getElementById("speaker")
-const dialogText = document.getElementById("dialog-text")
-const dialogBox = document.getElementById("dialog-box")
-const prevBtn = document.getElementById("prev-btn")
-const nextBtn = document.getElementById("next-btn")
-const book = document.getElementById("book")
+const els = {
+  pageImage: document.getElementById("page-image"),
+  pageTitle: document.getElementById("page-title"),
+  pageSubtitle: document.getElementById("page-subtitle"),
+  pageText: document.getElementById("page-text"),
+  speaker: document.getElementById("speaker"),
+  dialogText: document.getElementById("dialog-text"),
+  dialogBox: document.getElementById("dialog-box"),
+  storyBox: document.getElementById("story-box"),
+  coverOverlay: document.getElementById("cover-overlay"),
+  coverTitle: document.getElementById("cover-title"),
+  coverSubtitle: document.getElementById("cover-subtitle"),
+  coverText: document.getElementById("cover-text"),
+  book: document.getElementById("book"),
+  prevBtn: document.getElementById("prev-btn"),
+  nextBtn: document.getElementById("next-btn"),
+};
 
-let currentPage = 0
+let currentPage = 0;
 
+/* ---------------------------
+   1. GET PAGE DATA
+----------------------------*/
+function getPage() {
+  return pages[currentPage];
+}
+
+/* ---------------------------
+   2. RENDER CONTENT
+----------------------------*/
+function renderContent(page) {
+  els.pageImage.src = page.imageUrl || "";
+
+  els.pageTitle.textContent = page.title || "";
+  els.pageSubtitle.textContent = page.subtitle || "";
+  els.pageText.innerHTML = page.text || "";
+
+  els.speaker.textContent = page.speaker || "";
+  els.dialogText.innerHTML = page.dialog || "";
+}
+
+/* ---------------------------
+   3. UPDATE LAYOUT
+----------------------------*/
+function updateLayout(page) {
+  const isCover = page.type === "cover";
+
+  els.book.classList.toggle("cover-layout", isCover);
+  els.book.classList.toggle("story-layout", !isCover);
+
+  els.coverOverlay.style.display = isCover ? "flex" : "none";
+
+const hasStoryText = Boolean(page.text);
+const hasDialog = Boolean(page.dialog);
+
+els.storyBox.style.display =
+    !isCover && hasStoryText ? "block" : "none";
+
+els.dialogBox.style.display =
+    hasDialog ? "block" : "none";
+
+  els.prevBtn.style.visibility = isCover ? "hidden" : "visible";
+
+  if (isCover) {
+    els.coverTitle.textContent = page.title;
+    els.coverSubtitle.textContent = page.subtitle;
+    els.coverText.textContent = page.text;
+  }
+}
+
+/* ---------------------------
+   4. MAIN RENDER
+----------------------------*/
 function renderPage() {
+  const page = getPage();
 
-    const page = pages[currentPage]
-
-    pageImage.src = page.imageUrl
-
-    pageTitle.textContent = page.title || ""
-
-    pageSubtitle.textContent = page.subtitle || ""
-
-    pageText.textContent = page.text || ""
-
-
-book.classList.toggle("cover-layout", page.type === "cover");
-book.classList.toggle("story-layout", page.type === "story");    
-
-dialogBox.style.display = page.dialog ? "block" : "none";
-
-speaker.textContent = page.speaker || "";
-dialogText.innerHTML = page.dialog || "";
-
-storyBox.style.display = page.text ? "block" : "none";
+  renderContent(page);
+  updateLayout(page);
 }
 
-
-prevBtn.addEventListener("click", () => {
-    changePage("prev");
-});
-
-nextBtn.addEventListener("click", () => {
-    changePage("next");
-});
-
-function goToPage(pageIndex) {
-
-  currentPage = pageIndex
-  renderPage()
-}
-
-function nextPage (){
-if (currentPage < pages.length -1) {
-   goToPage(currentPage + 1)
-}
-}
-
-function previousPage (){
-   if (currentPage > 0){
-    goToPage(currentPage - 1)
-   } 
-}
-
+/* ---------------------------
+   5. NAVIGATION
+----------------------------*/
 function changePage(direction) {
-  const bookEl = document.getElementById("book");
-
   let newIndex = currentPage;
 
   if (direction === "next" && currentPage < pages.length - 1) {
-    newIndex = currentPage + 1;
+    newIndex++;
   }
 
   if (direction === "prev" && currentPage > 0) {
-    newIndex = currentPage - 1;
+    newIndex--;
   }
 
   if (newIndex === currentPage) return;
 
+  const bookEl = els.book;
+
   const exitClass = direction === "next" ? "slide-left" : "slide-right";
   const enterClass = direction === "next" ? "slide-right" : "slide-left";
 
-  // 1. salida
   bookEl.classList.add(exitClass);
 
   requestAnimationFrame(() => {
-
-    // 2. cambiar data
     currentPage = newIndex;
     renderPage();
 
-    // 3. preparar entrada
     bookEl.classList.add(enterClass);
 
     requestAnimationFrame(() => {
@@ -216,11 +230,20 @@ function changePage(direction) {
   });
 }
 
+/* ---------------------------
+   6. EVENTS
+----------------------------*/
+els.prevBtn.addEventListener("click", () => changePage("prev"));
+els.nextBtn.addEventListener("click", () => changePage("next"));
+
+/* ---------------------------
+   7. PRELOAD
+----------------------------*/
 function preloadImages() {
-    pages.forEach(page => {
-        const img = new Image();
-        img.src = page.imageUrl;
-    });
+  pages.forEach(p => {
+    const img = new Image();
+    img.src = p.imageUrl;
+  });
 }
 
 preloadImages();

@@ -40,6 +40,7 @@ body {
     overflow: hidden;
     height: 380px;
     flex-shrink:0;
+    position: relative;
 }
 
 #page-image {
@@ -50,6 +51,8 @@ body {
     box-shadow: 0 8px 15px rgba(0,0,0,.15);
     object-position: center 70%;
     border: 4px solid white;
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -85,6 +88,59 @@ body {
 #page-subtitle {
     color: #3b5bdb;
     font-weight: 400;
+}
+
+#cover-title{
+
+    font-size:3rem;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    text-shadow:0 3px 12px rgba(0,0,0,.6);
+}
+
+#cover-subtitle{
+
+    font-size:1.4rem;
+
+    margin-top:.5rem;
+
+    font-weight:400;
+
+    text-shadow:0 2px 8px rgba(0,0,0,.5);
+
+}
+
+#cover-text{
+
+    font-size:1.15rem;
+
+    line-height:1.5;
+
+    padding:1rem;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(8px);
+
+    border-radius:14px;
+
+    text-shadow:0 2px 6px rgba(0,0,0,.5);
+
+}
+
+.cover-layout #page-image{
+
+    border:none;
+
+    border-radius:18px;
+
+    box-shadow:none;
+
 }
 
 #page-text {
@@ -143,6 +199,45 @@ i {
     position: relative;
 }
 
+.cover-layout .page-scene{
+
+    position:relative;
+
+    height:100%;
+
+    overflow:hidden;
+
+    border-radius:18px;
+}
+.cover-layout #page-image{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    border:none;
+
+    border-radius:18px;
+}
+.cover-overlay{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.5rem;
+    color: white;
+    text-align: center;
+    background: linear-gradient(
+        rgba(0,0,0,.15),
+        rgba(0,0,0,.45)
+    );
+      z-index: 2;
+}
 
 .story-layout .story-box{
     text-align:left;

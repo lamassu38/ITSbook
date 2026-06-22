@@ -3,14 +3,20 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: sans-serif;
-    height: 100vh; 
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: powderblue;  
+    background-color: powderblue;
 }
+
+
+/* =========================
+   BOOK STRUCTURE
+========================= */
 
 .book-wrapper {
     display: flex;
@@ -23,66 +29,60 @@ body {
     height: 600px;
     padding: 1rem;
     border-radius: 20px;
+    background: linear-gradient(180deg, #ffffff, #f3efff);
     box-shadow: 0 15px 30px rgba(0,0,0,.15),
                 0 30px 60px rgba(0,0,0,.10);
-    background: linear-gradient(
-    180deg,
-    #ffffff,
-    #f3efff
-     );
     display: grid;
     grid-template-rows: auto 1fr auto;
     transition: transform 0.35s ease;
 }
 
+
+/* =========================
+   IMAGE AREA
+========================= */
+
 .page-scene {
-    flex: 1;
-    overflow: hidden;
-    height: 380px;
-    flex-shrink:0;
     position: relative;
+    height: 380px;
+    overflow: hidden;
 }
 
 #page-image {
+    position: relative;
+    z-index: 1;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 8px 15px rgba(0,0,0,.15);
     object-position: center 70%;
     border: 4px solid white;
-    position: relative;
-    z-index: 1;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0,0,0,.15);
 }
 
+
+/* =========================
+   STORY CONTENT
+========================= */
 
 .story-box {
     position: static;
-
     max-width: 92%;
-
-    background: white;
-
     padding: 10px 22px;
-    
+    background: white;
     border: 2px solid #d8d8e8;
-
-    backdrop-filter: blur(4px);
-
-    text-align: center;
-
-    font-size: 1.06rem;
-
-    line-height: 1.3;
     color: #444;
-
+    text-align: center;
+    font-size: 1.06rem;
+    line-height: 1.3;
     box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    backdrop-filter: blur(4px);
 }
 
 #page-title {
+    margin-bottom: .5rem;
     color: #5f3dc4;
     font-size: 2.5rem;
-    margin-bottom: .5rem;
 }
 
 #page-subtitle {
@@ -90,95 +90,148 @@ body {
     font-weight: 400;
 }
 
-#cover-title{
-
-    font-size:3rem;
-
-    font-weight:900;
-
-    letter-spacing:2px;
-
-    text-transform:uppercase;
-
-    text-shadow:0 3px 12px rgba(0,0,0,.6);
-}
-
-#cover-subtitle{
-
-    font-size:1.4rem;
-
-    margin-top:.5rem;
-
-    font-weight:400;
-
-    text-shadow:0 2px 8px rgba(0,0,0,.5);
-
-}
-
-#cover-text{
-
-    font-size:1.15rem;
-
-    line-height:1.5;
-
-    padding:1rem;
-
-    background:rgba(255,255,255,.15);
-
-    backdrop-filter:blur(8px);
-
-    border-radius:14px;
-
-    text-shadow:0 2px 6px rgba(0,0,0,.5);
-
-}
-
-.cover-layout #page-image{
-
-    border:none;
-
-    border-radius:18px;
-
-    box-shadow:none;
-
-}
-
 #page-text {
+    margin-bottom: 0.6rem;
+    color: #444;
+    font-size: 1.08rem;
     line-height: 1.3;
-    color:  #444;
-    margin-bottom:0.6rem;
-    font-size:1.08rem;
-
 }
+
+
+/* =========================
+   DIALOG
+========================= */
 
 .dialog-box {
-
-    background:#eef4ff;
-
-    padding: 0.6rem 1rem;
-
     margin-top: 1rem;
-
+    padding: 0.6rem 1rem;
+    background: #eef4ff;
     border: 5px solid #3b5bdb;
-
     border-radius: 15px;
-
     box-shadow: 0 4px 12px rgba(0,0,0,.15);
 }
 
 #speaker {
+    margin-bottom: .4rem;
     color: #364fc7;
-    font-weight:700;
-    margin-bottom:.4rem;
+    font-weight: 700;
 }
 
 
+/* =========================
+   COVER PAGE
+========================= */
+
+.cover-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.cover-layout .page-scene {
+    order: 1;
+    height: 100%;
+    min-height: 540px;
+    border-radius: 18px;
+}
+
+.cover-layout #page-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    border: none;
+    border-radius: 18px;
+    box-shadow: none;
+}
+
+.cover-layout .story-box {
+    order: 2;
+}
+
+.cover-layout .dialog-box {
+    display: none;
+}
+
+.cover-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.5rem;
+    color: white;
+    text-align: center;
+    background: linear-gradient(
+        rgba(0,0,0,.15),
+        rgba(0,0,0,.45)
+    );
+}
+
+.cover-header {
+    margin-top: 1rem;
+}
+
+#cover-title {
+    font-size: clamp(2rem, 7vw, 3rem);
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 3px 12px rgba(0,0,0,.6);
+}
+
+#cover-subtitle {
+    margin-top: .5rem;
+    font-size: clamp(1rem, 4vw, 1.4rem);
+    font-weight: 400;
+    text-shadow: 0 2px 8px rgba(0,0,0,.5);
+}
+
+#cover-text {
+    align-self: center;
+    max-width: 90%;
+    margin-top: auto;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    font-size: clamp(.95rem, 3vw, 1.15rem);
+    line-height: 1.5;
+    background: rgba(255,255,255,.15);
+    border-radius: 14px;
+    text-shadow: 0 2px 6px rgba(0,0,0,.5);
+    backdrop-filter: blur(8px);
+}
+
+
+/* =========================
+   STORY LAYOUT
+========================= */
+
+.story-layout .story-box {
+    order: 1;
+    text-align: left;
+}
+
+.story-layout .page-scene {
+    order: 2;
+}
+
+.story-layout .dialog-box {
+    order: 3;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
 button {
+    margin: 10px;
     border: none;
     background-color: transparent;
     cursor: pointer;
-    margin: 10px;
-    }
+}
 
 button:focus {
     outline: none;
@@ -192,80 +245,10 @@ i {
     font-size: 50px;
 }
 
-.cover-layout {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    position: relative;
-}
 
-.cover-layout .page-scene{
-
-    position:relative;
-
-    height:100%;
-
-    overflow:hidden;
-
-    border-radius:18px;
-}
-.cover-layout #page-image{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    object-position:center;
-
-    border:none;
-
-    border-radius:18px;
-}
-.cover-overlay{
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 2.5rem;
-    color: white;
-    text-align: center;
-    background: linear-gradient(
-        rgba(0,0,0,.15),
-        rgba(0,0,0,.45)
-    );
-      z-index: 2;
-}
-
-.story-layout .story-box{
-    text-align:left;
-}
-
-.story-layout .story-box{
-    order:1;
-}
-
-.story-layout .page-scene{
-    order:2;
-}
-
-.story-layout .dialog-box{
-    order:3;
-}
-
-.cover-layout .page-scene{
-    order:1;
-}
-
-.cover-layout .story-box{
-    order:2;
-}
-
-.cover-layout .dialog-box{
-    display:none;
-}
+/* =========================
+   ANIMATION
+========================= */
 
 .slide-left {
     transform: translateX(-100%);
@@ -275,9 +258,15 @@ i {
     transform: translateX(100%);
 }
 
+
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 768px) {
 
     body {
+        height: auto;
         padding: 10px;
         justify-content: flex-start;
         align-items: flex-start;
@@ -285,9 +274,9 @@ i {
 
     .book-wrapper {
         width: 100%;
-        display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 8px;
     }
 
     .book {
@@ -295,17 +284,12 @@ i {
         max-width: 95vw;
         height: auto;
         min-height: auto;
-        padding: 0.8rem;
+        padding: 0.7rem;
+        border-radius: 16px;
     }
 
-      .page-scene{
-        height:auto;
-    }
-
-    .story-image{
-        width:100%;
-        height:auto;
-        object-fit:contain;
+    .page-scene {
+        height: auto;
     }
 
     #page-image {
@@ -314,8 +298,53 @@ i {
         object-fit: cover;
     }
 
-    #prev-btn,
-    #next-btn {
-        font-size: 40px;
+    .cover-layout {
+        min-height: 88vh;
+    }
+
+    .cover-layout .page-scene {
+        height: 82vh;
+        min-height: 620px;
+        border-radius: 16px;
+    }
+
+    .cover-layout #page-image {
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    .cover-overlay {
+        padding: 1.2rem;
+        justify-content: space-between;
+    }
+
+    .cover-header {
+        margin-top: 1.2rem;
+        padding: 0 0.5rem;
+    }
+
+    #cover-title {
+        font-size: clamp(1.6rem, 6vw, 3rem);
+        line-height: 1;
+    }
+
+    #cover-subtitle {
+        font-size: clamp(1rem, 5vw, 1.35rem);
+        line-height: 1.15;
+    }
+
+    #cover-text {
+        max-width: 100%;
+        margin-bottom: 0.4rem;
+        padding: 0.8rem;
+        font-size: 1rem;
+        line-height: 1.35;
+        background: rgba(0,0,0,.35);
+        backdrop-filter: blur(6px);
+    }
+
+    i {
+        font-size: 42px;
     }
 }

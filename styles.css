@@ -54,7 +54,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 70%;
+    object-position: center 50%;
     border: 4px solid white;
     border-radius: 12px;
     box-shadow: 0 8px 15px rgba(0,0,0,.15);
@@ -311,7 +311,7 @@ i {
     .cover-layout #page-image {
         height: 100%;
         object-fit: cover;
-        object-position: center 20%;
+        object-position: center 30%;
     }
 
     .cover-overlay {

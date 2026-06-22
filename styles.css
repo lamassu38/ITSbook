@@ -311,7 +311,7 @@ i {
     .cover-layout #page-image {
         height: 100%;
         object-fit: cover;
-        object-position: center top;
+        object-position: center 20%;
     }
 
     .cover-overlay {

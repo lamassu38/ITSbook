@@ -1,123 +1,243 @@
-export const pages = [ 
-   {
+const pages = [
+  {
     id: 0,
     type: "cover",
     title: "UN FUTURO PROTEGIDO",
-    imageUrl: "images/cristianandangelacover.png",
-    subtitle:"La historia de Cristian y Angelica",
-    text: "Guía ilustrada sobre pruebas rápidas de VIH, VHC Y VDRL.",
-   },
-   
-   {
+    imageUrl: "images/cristianandangelacover.webp",
+    alt: "Cristian y Angélica leen un folleto sobre pruebas rápidas de ITS junto a un módulo de salud en Parque Fundadores.",
+    imagePosition: "center 65%",
+    subtitle: "La historia de Cristian y Angélica",
+    text: "Guía ilustrada sobre las pruebas rápidas para la detección de VIH, hepatitis C y sífilis."
+  },
+
+  {
     id: 1,
     type: "story",
-    imageUrl: "images/cristianandangelaone.png",
-
-    text: `Hola, soy Cristian y ella es mi novia, Angélica.
-
-    Mientras paseábamos por el centro de la ciudad vimos un módulo de salud donde ofrecían pruebas rápidas gratuitas para detectar infecciones de transmisión sexual.`,
-
-    speaker: "Cristian",
-
-    dialog: "¿Qué detectan con estas pruebas?"
+    imageUrl: "images/cristiantalkingtoerikatwo.png",
+    alt: "Cristian y Angélica conversan con Erika frente al módulo de pruebas rápidas.",
+    imagePosition: "center 14%",
+    narration: `Esta es la historia de Cristian y Angélica. Mientras paseaban por el centro de la ciudad, vieron un módulo de salud que ofrecía pruebas rápidas. Llevaban algunos meses saliendo y querían hablar de temas importantes antes de dar el siguiente paso en su relación.`,
+    bubbles: [
+      {
+        speaker: "Cristian",
+        kind: "speech",
+        text: `Nunca me he hecho una prueba rápida. ¿Qué detectan exactamente?`,
+        position: "top-left",  
+        offset: { top: "0%", left: "0%" },
+        tail: "up-right",
+        tailOffset: "38%"
+      },
+      {
+        speaker: "Erika",
+        kind: "speech",
+        text: `Qué bueno que se acercaron. Las pruebas son gratuitas y confidenciales, y ayudan a detectar VIH, hepatitis C y sífilis. Si gustan, pasen al módulo y les explico cómo se realizan.`,
+        position: "bottom-right",
+        offset: { bottom: "0%" },
+        tail: "down-left"
+      }
+    ]
   },
 
-  {  
+  {
     id: 2,
     type: "story",
-    imageUrl: "images/erikaexplinationone.png",
-
-    text: `Entramos al módulo y la química nos invitó a sentarnos para explicarnos, mediante unas láminas educativas, en qué consistían las pruebas.`,
-
-    speaker: "Erika",
-
-    dialog: `Estas pruebas detectan anticuerpos contra el VIH, la hepatitis C y la bacteria que causa la sífilis. Estas infecciones pueden transmitirse por contacto sexual, sangre o agujas contaminadas y, en algunos casos, durante el embarazo.`
+    imageUrl: "images/erikaexplinationone.webp",
+     imagePosition: "center -10%",
+    alt: "Erika explica a Cristian y Angélica qué infecciones ayudan a identificar las pruebas rápidas.",
+    narration: `Entraron al módulo y Erika, la química, utilizó una lámina para explicarles que las pruebas rápidas ayudan a prevenir e identificar las Infecciones de Transmisión Sexual o ITS.`,
+    bubbles: [
+      {
+        speaker: "Erika",
+        kind: "speech",
+        text: `¿Sabían que no todas las ITS son causadas por lo mismo? El VIH y el VHC son virus; la sífilis es una infección causada por una bacteria. Estas pruebas buscan anticuerpos relacionados con las tres infecciones.`,
+        position: "top-right",
+        offset: { top: "0%", right: "18%"},
+        tail: "up-right"
+      }
+    ]
   },
-  
+
   {
     id: 3,
     type: "story",
-    imageUrl: "images/erikaexplinationtwo.png",
-
-    text: `Escuchamos atentamente mientras la química nos explicaba
-    que muchas infecciones pueden prevenirse adoptando hábitos
-    responsables y reduciendo situaciones de riesgo.`,
-
-    speaker: "Erika",
-
-    dialog: `Realizar estas pruebas de forma periódica permite detectar oportunamente una infección y reducir el riesgo de complicaciones para ti, tu pareja y tu futuro bebé.`
-           
-  },
-  {
-  id: 4,
-    type: "story",
-    imageUrl: "images/angelahablandothree.png",
-
-    text: `Nos sorprendió saber que el procedimiento era gratuito, confidencial y no requiere venir en ayunas. En solo veinte minutos vamos a conocer nuestro resultado.`,
-
+    imageUrl: "images/erikaexplinationquestion.webp",
+    alt: "Angélica pregunta a Erika por las complicaciones causadas por el VHC y Treponema pallidum.",
+    narration: `Al observar la siguiente lámina, Angélica quiso saber qué complicaciones podían causar estas infecciones.`,
+    bubbles: [
+      {
     speaker: "Angélica",
-
-    dialog: `Cristian, creo que deberíamos hacernos las pruebas. Igual que revisarnos la glucosa o la presión arterial, conocer nuestro estado de salud también es importante.`
+    kind: "speech",
+    text: `Sé que, sin tratamiento, el VIH puede progresar a sida, pero ¿qué complicaciones pueden provocar el VHC y la bacteria Treponema pallidum?`,
+    position: "top-left",  
+    offset: { top: "0%", left: "4%" },
+    tail: "up-right"
+  }
+    ]
   },
+
   {
-  id: 5,
-  type: "story",
-  imageUrl: "images/cristianbeentestedfour.png",
-
-  text: `<p>Mientras Erika obtenía una pequeña muestra de sangre, Cristian comenzó a sentirse más tranquilo.</p>
-
-  <h4>💭 Cristian </h4>
-
-  <p> Sé que esto es lo correcto.</p>
-
-  <p>Queremos empezar esta nueva etapa con tranquilidad.</p>
-
-  <h4>💭 Angélica</h4>
-
-  <p>Hacernos estas pruebas también es una forma de cuidarnos y demostrar cuánto nos importa nuestro bienestar.</p>`
-
-},
-{
-  id: 6,
+    id: 4,
     type: "story",
-    imageUrl: "images/erikaresultsfive.png",
-
-    speaker: "Erika",
-
-    dialog: `En esta ocasión, los resultados fueron no reactivos para las tres pruebas. Como medida preventiva, les recomendamos repetir la prueba una vez al año mientras continúen siendo sexualmente activos o antes si han tenido una situación de riesgo.`
+    imageUrl: "images/erikaexplinationtwo.webp",
+    alt: "Erika explica las posibles complicaciones de la hepatitis C y la sífilis.",
+    narration: `Erika respondió con ejemplos sencillos y explicó por qué es importante detectar estas infecciones a tiempo.`,
+    bubbles: [
+      {
+        speaker: "Erika",
+        kind: "speech",
+        text: `La hepatitis C puede causar inflamación crónica, cirrosis o cáncer de hígado. La sífilis, si no se trata, puede afectar el cerebro, los nervios y el corazón.`,
+        position: "top-right",
+        offset: { top: "0%", right: "18%" },
+        tail: "up-right"
+      }
+    ]
   },
+
   {
-  id: 7,
+    id: 5,
     type: "story",
-    imageUrl: "images/erikainvitationsix.png",
-
-    text: `Durante esta historia, Cristian y Angélica descubrieron que cuidar la salud sexual también es una forma de cuidar su relación y su futuro juntos.`,
-
-    speaker: "Erika",
-
-    dialog: `<p>Así como ellos, hoy tú también puedes dar este paso para cuidar de tu salud.</p>
-
-<p>
-    Acércate a tu centro de salud. Solicita la prueba. Conoce tu estado de salud.</li>
-</p>
-
-<h4>Centros disponibles</h4>
-
-<ul>
-    <li>CAPS Villas del Sol</li>
-    <li>CAPS Petén</li>
-    <li>CAPS Puerto Aventuras</li>
-</ul>`
+    imageUrl: "images/erikatestingtiming.webp",
+    alt: "Cristian pregunta cuándo hacerse las pruebas y Erika explica que algunas infecciones pueden no causar síntomas.",
+    narration: `La explicación llevó a Cristian a plantear una duda frecuente: cuándo hacerse las pruebas si no hay síntomas.`,
+    bubbles: [
+      {
+        speaker: "Cristian",
+        kind: "speech",
+        text: `Si me siento bien, ¿cómo sé cuándo debo hacerme estas pruebas?`,
+        position: "top-left",  
+        offset: { top: "2%", left: "0%" },
+        tail: "up-right",
+        tailOffset: "38%"
+      },
+      {
+        speaker: "Erika",
+        kind: "speech",
+        text: `Algunas infecciones no causan síntomas y aun así pueden transmitirse. Si crees que tuviste una exposición, acércate al personal de salud. Te orientarán sobre cuándo hacer cada prueba o repetirla, porque sus periodos de ventana son diferentes.`,
+        position: "bottom-right",
+        offset: { bottom: "0%", right: "14%" },
+        tail: "down-right"
+      }
+    ]
   },
-]
+
+  {
+    id: 6,
+    type: "story",
+    imageUrl: "images/angelahablandothree.webp",
+    imagePosition: "center 14%",
+    alt: "Angélica propone a Cristian hacerse las pruebas y él acepta mientras Erika espera junto a la lámina del proceso.",
+    narration: `Erika les explicó el proceso: no necesitaban una orden médica ni acudir en ayunas y podían solicitar las pruebas directamente en el módulo.`,
+    bubbles: [
+       {
+        speaker: "Angélica",
+        kind: "speech",
+        text: `Cristian, ¿qué te parece si nos hacemos las pruebas?`,
+        position: "top-left",  
+        offset: { top: "0%", right: "25%" },
+        tail: "up-right",
+        tailOffset: "38%"
+      },
+      {
+        speaker: "Cristian",
+        kind: "speech",
+        text: `Sí, hagámoslas.`,
+        position: "top-right",  
+        offset: { top: "0%", right: "25%" },
+        tail: "up-left",
+        tailOffset: "8%"
+      }
+     
+    ]
+  },
+
+  {
+    id: 7,
+    type: "story",
+    imageUrl: "images/cristianbeentestedfour.webp",
+    alt: "Erika obtiene una muestra de sangre del dedo de Cristian mientras Angélica llena el consentimiento informado.",
+    narration: `Ambos aceptaron realizarse las pruebas. Mientras Erika obtenía una pequeña muestra de sangre del dedo de Cristian, Angélica llenaba el consentimiento informado. Los dos se sentían tranquilos con su decisión.`,
+    bubbles: [
+      {
+        speaker: "Cristian",
+        kind: "thought",
+        text: `Sé que esto es lo correcto. Queremos comenzar esta nueva etapa con tranquilidad.`,
+        position: "bottom-left",
+        offset: { bottom: "10%", left: "0%" },
+        tailOffset: "35%"
+      },
+      {
+        speaker: "Angélica",
+        kind: "thought",
+        text: `Hacernos estas pruebas también es una forma de cuidarnos y demostrar cuánto nos importa nuestro bienestar.`,
+        position: "bottom-right",
+        offset: { bottom: "0%", right: "20%" },
+        tailOffset: "80%"
+      }
+    ]
+  },
+
+  {
+    id: 8,
+    type: "story",
+    imageUrl: "images/erikaresultsfive.webp",
+    alt: "Erika muestra a Cristian y Angélica un reporte con resultados no reactivos para VIH, VHC y sífilis.",
+    narration: `Después del tiempo de espera, Erika les mostró el reporte y explicó el significado de los resultados.`,
+    bubbles: [
+      {
+        speaker: "Cristian",
+        kind: "speech",
+        text: `¿Qué significa “no reactivo”?`,
+        position: "top-left",  
+        offset: { top: "2%", left: "0%" },
+        tail: "up-right",
+        tailOffset: "38%"
+      },
+      {
+        speaker: "Erika",
+        kind: "speech",
+        text: `Significa que, en la muestra analizada hoy, no se detectaron los anticuerpos que buscan estas pruebas para VIH, hepatitis C ni sífilis. Es un resultado favorable. Si hubo una exposición reciente, sigan la orientación sobre cuándo repetirlas.`,
+        position: "bottom-right",
+        offset: { bottom: "0%", right: "0%" },
+        tail: "down-left"
+      }
+    ]
+  },
+
+  {
+    id: 9,
+    type: "story",
+    imageUrl: "images/erikainvitationsix-style-v1.webp",
+    imagePosition: "center 64%",
+    alt: "Erika mira al lector e invita a la comunidad a solicitar las pruebas rápidas, mientras Cristian y Angélica se alejan juntos del módulo.",
+    narration: `A lo largo de esta historia, Cristian y Angélica descubrieron que cuidar su salud sexual también es una forma de cuidar su relación y el futuro que desean construir juntos.`,
+    bubbles: [
+      {
+        speaker: "Erika",
+        kind: "speech",
+        paragraphs: [
+          "Las mejores historias de amor empiezan con confianza, comunicación y prevención.",
+          "Acércate a tu centro de salud y solicita tus pruebas rápidas."
+        ],
+        listTitle: "Centros disponibles",
+        list: [
+          "CAPS Villas del Sol",
+          "CAPS Petén",
+          "CAPS Puerto Aventuras"
+        ],
+        position: "bottom-left",
+        offset: { bottom: "0%", left: "3%" },
+        tail: "right"
+      }
+    ]
+  }
+];
+
 
 const els = {
   pageImage: document.getElementById("page-image"),
   pageTitle: document.getElementById("page-title"),
   pageSubtitle: document.getElementById("page-subtitle"),
   pageText: document.getElementById("page-text"),
-  speaker: document.getElementById("speaker"),
-  dialogText: document.getElementById("dialog-text"),
   dialogBox: document.getElementById("dialog-box"),
   storyBox: document.getElementById("story-box"),
   coverOverlay: document.getElementById("cover-overlay"),
@@ -131,30 +251,102 @@ const els = {
 
 let currentPage = 0;
 
-/* ---------------------------
-   1. GET PAGE DATA
-----------------------------*/
+
 function getPage() {
   return pages[currentPage];
 }
 
-/* ---------------------------
-   2. RENDER CONTENT
-----------------------------*/
 function renderContent(page) {
   els.pageImage.src = page.imageUrl || "";
+  els.pageImage.alt = page.alt || "";
+  els.pageImage.style.objectPosition = page.imagePosition || "center 20%";
 
   els.pageTitle.textContent = page.title || "";
   els.pageSubtitle.textContent = page.subtitle || "";
-  els.pageText.innerHTML = page.text || "";
+  els.pageText.innerHTML = page.narration || page.text || "";
 
-  els.speaker.textContent = page.speaker || "";
-  els.dialogText.innerHTML = page.dialog || "";
+  renderBubbles(page.bubbles || []);
 }
 
-/* ---------------------------
-   3. UPDATE LAYOUT
-----------------------------*/
+function renderBubbles(bubbles) {
+  els.dialogBox.innerHTML = "";
+
+  bubbles.forEach(bubble => {
+    const bubbleEl = document.createElement("div");
+    bubbleEl.classList.add(bubble.kind === "thought" ? "thought-bubble" : "speech-bubble");
+    bubbleEl.classList.add("pos-" + (bubble.position || "bottom-left"));
+
+    if (bubble.kind !== "thought" && bubble.tail) {
+      if (bubble.tail.includes("-")) {
+    const [vertical, horizontal] = bubble.tail.split("-");
+    bubbleEl.classList.add("tail-" + vertical, "tail-" + horizontal);
+  } else {
+    bubbleEl.classList.add("tail-side-" + bubble.tail); // "left" o "right"
+  }
+    }
+
+    if (bubble.offset) {
+      Object.assign(bubbleEl.style, bubble.offset);
+    }
+
+    if (bubble.tailOffset) {
+       bubbleEl.style.setProperty("--tail-offset", bubble.tailOffset);
+    }
+
+    if (bubble.width) {
+     bubbleEl.style.setProperty("--bubble-width", bubble.width);
+    }
+
+    if (bubble.kind !== "thought") {
+      const speakerEl = document.createElement("h3");
+      speakerEl.classList.add("bubble-speaker");
+      speakerEl.textContent = bubble.speaker || "";
+      bubbleEl.appendChild(speakerEl);
+    }
+
+renderBubbleContent(bubble, bubbleEl);
+
+els.dialogBox.appendChild(bubbleEl);
+  });
+
+}
+
+function renderBubbleContent(bubble, container) {
+  if (bubble.text) {
+   
+    const p = document.createElement("p");
+    p.classList.add("bubble-text");
+    p.textContent = bubble.text;
+    container.appendChild(p);
+    return;
+  }
+
+  if (bubble.paragraphs) {
+    bubble.paragraphs.forEach(paragraph => {
+      const p = document.createElement("p");
+      p.classList.add("bubble-text");
+      p.textContent = paragraph;
+      container.appendChild(p);
+    });
+  }
+
+  if (bubble.listTitle) {
+    const h4 = document.createElement("h4");
+    h4.textContent = bubble.listTitle;
+    container.appendChild(h4);
+  }
+
+  if (bubble.list) {
+    const ul = document.createElement("ul");
+    bubble.list.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      ul.appendChild(li);
+    });
+    container.appendChild(ul);
+  }
+}
+
 function updateLayout(page) {
   const isCover = page.type === "cover";
 
@@ -163,14 +355,11 @@ function updateLayout(page) {
 
   els.coverOverlay.style.display = isCover ? "flex" : "none";
 
-const hasStoryText = Boolean(page.text);
-const hasDialog = Boolean(page.dialog);
+  const hasStoryText = Boolean(page.narration || page.text) && !isCover;
+  const hasBubbles = Boolean(page.bubbles && page.bubbles.length > 0);
 
-els.storyBox.style.display =
-    !isCover && hasStoryText ? "block" : "none";
-
-els.dialogBox.style.display =
-    hasDialog ? "block" : "none";
+  els.storyBox.style.display = hasStoryText ? "block" : "none";
+  els.dialogBox.style.display = hasBubbles ? "block" : "none";
 
   els.prevBtn.style.visibility = isCover ? "hidden" : "visible";
 
@@ -181,9 +370,6 @@ els.dialogBox.style.display =
   }
 }
 
-/* ---------------------------
-   4. MAIN RENDER
-----------------------------*/
 function renderPage() {
   const page = getPage();
 
@@ -191,9 +377,7 @@ function renderPage() {
   updateLayout(page);
 }
 
-/* ---------------------------
-   5. NAVIGATION
-----------------------------*/
+
 function changePage(direction) {
   let newIndex = currentPage;
 
@@ -230,15 +414,11 @@ function changePage(direction) {
   });
 }
 
-/* ---------------------------
-   6. EVENTS
-----------------------------*/
+
 els.prevBtn.addEventListener("click", () => changePage("prev"));
 els.nextBtn.addEventListener("click", () => changePage("next"));
 
-/* ---------------------------
-   7. PRELOAD
-----------------------------*/
+
 function preloadImages() {
   pages.forEach(p => {
     const img = new Image();

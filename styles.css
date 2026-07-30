@@ -68,15 +68,15 @@ body {
 }
 
 .story-box {
-    flex-shrink: 0;        
+    flex-shrink: 0;
     max-width: 92%;
-    padding: 12px 22px;
+    padding: clamp(8px, 1.5vw, 14px) clamp(14px, 2.5vw, 24px);
     background: #fff59d;
     border: 3px solid #1a1a1a;
     border-radius: 4px;
     color: #1a1a1a;
     text-align: left;
-    font-size: 1.06rem;
+    font-size: clamp(0.85rem, 1.8vw, 1.1rem);
     line-height: 1.35;
     box-shadow: 4px 4px 0 rgba(0,0,0,.85);
     transform: rotate(-0.6deg);
@@ -110,8 +110,8 @@ body {
 .speech-bubble, .thought-bubble {
     position: absolute;
     max-width: var(--bubble-width, 42%);
-    padding: 8px 14px;
-    font-size: 0.92rem;
+    padding: clamp(6px, 1vw, 10px) clamp(10px, 1.8vw, 16px);
+    font-size: clamp(0.8rem, 1.6vw, 0.95rem);
     pointer-events: auto;
     font-family: "Kalam", cursive;
 }
@@ -424,7 +424,7 @@ i {
         object-fit: cover;
     }
 
-    .speech-bubble, .thought-bubble {
+      .speech-bubble, .thought-bubble {
         max-width: 60%;
         font-size: 0.85rem;
         padding: 6px 10px;

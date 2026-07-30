@@ -13,10 +13,14 @@ body {
     background-color: powderblue;
 }
 
+#cover-title, #page-title, .bubble-speaker {
+    font-family: "Bangers", cursive;
+    letter-spacing: 1.5px;
+}
 
-/* =========================
-   BOOK STRUCTURE
-========================= */
+#page-text, #cover-text, #cover-subtitle, #page-subtitle {
+    font-family: "Kalam", cursive;
+}
 
 .book-wrapper {
     display: flex;
@@ -25,27 +29,17 @@ body {
 }
 
 .book {
-    width: 700px;
-    height: 600px;
+    width: min(800px, 92vw);
+    height: min(900px, 88vh);
     padding: 1rem;
     border-radius: 20px;
     background: linear-gradient(180deg, #ffffff, #f3efff);
     box-shadow: 0 15px 30px rgba(0,0,0,.15),
                 0 30px 60px rgba(0,0,0,.10);
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
     transition: transform 0.35s ease;
-}
-
-
-/* =========================
-   IMAGE AREA
-========================= */
-
-.page-scene {
-    position: relative;
-    height: 380px;
-    overflow: hidden;
 }
 
 #page-image {
@@ -54,29 +48,38 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 50%;
+    object-position: center 20%;
     border: 4px solid white;
     border-radius: 12px;
     box-shadow: 0 8px 15px rgba(0,0,0,.15);
 }
 
 
-/* =========================
-   STORY CONTENT
-========================= */
+.page-scene {
+    position: relative;
+    flex: 1;              
+}
+
+.image-frame {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: 12px;
+}
 
 .story-box {
-    position: static;
+    flex-shrink: 0;        
     max-width: 92%;
-    padding: 10px 22px;
-    background: white;
-    border: 2px solid #d8d8e8;
-    color: #444;
-    text-align: center;
+    padding: 12px 22px;
+    background: #fff59d;
+    border: 3px solid #1a1a1a;
+    border-radius: 4px;
+    color: #1a1a1a;
+    text-align: left;
     font-size: 1.06rem;
-    line-height: 1.3;
-    box-shadow: 0 4px 12px rgba(0,0,0,.15);
-    backdrop-filter: blur(4px);
+    line-height: 1.35;
+    box-shadow: 4px 4px 0 rgba(0,0,0,.85);
+    transform: rotate(-0.6deg);
 }
 
 #page-title {
@@ -91,36 +94,177 @@ body {
 }
 
 #page-text {
-    margin-bottom: 0.6rem;
     color: #444;
     font-size: 1.08rem;
     line-height: 1.3;
 }
 
 
-/* =========================
-   DIALOG
-========================= */
-
 .dialog-box {
-    margin-top: 1rem;
-    padding: 0.6rem 1rem;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.speech-bubble, .thought-bubble {
+    position: absolute;
+    max-width: var(--bubble-width, 42%);
+    padding: 8px 14px;
+    font-size: 0.92rem;
+    pointer-events: auto;
+    font-family: "Kalam", cursive;
+}
+
+.bubble-speaker {
+    margin-bottom: 4px;
+}
+
+.bubble-text {
+    color: #1a1a1a;
+    line-height: 1.35;
+}
+
+.pos-top-left     { top: 6%;    left: 6%; }
+.pos-top-right    { top: 6%;    right: 6%; }
+.pos-bottom-left  { bottom: 6%; left: 6%; }
+.pos-bottom-right { bottom: 6%; right: 6%; }
+
+
+.speech-bubble {
     background: #eef4ff;
-    border: 5px solid #3b5bdb;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+    border: 4px solid #1a1a1a;
+    border-radius: 20px;
 }
 
-#speaker {
-    margin-bottom: .4rem;
+.speech-bubble .bubble-speaker {
     color: #364fc7;
-    font-weight: 700;
+}
+
+.speech-bubble.tail-up::after {
+    content: "";
+    position: absolute;
+    bottom: -18px;
+    border-width: 18px 12px 0 12px;
+    border-style: solid;
+    border-color: #1a1a1a transparent transparent transparent;
+}
+.speech-bubble.tail-up::before {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    border-width: 13px 8px 0 8px;
+    border-style: solid;
+    border-color: #eef4ff transparent transparent transparent;
+    z-index: 1;
+}
+
+.speech-bubble.tail-down::after {
+    content: "";
+    position: absolute;
+    top: -18px;
+    border-width: 0 12px 18px 12px;
+    border-style: solid;
+    border-color: transparent transparent #1a1a1a transparent;
+}
+.speech-bubble.tail-down::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    border-width: 0 8px 13px 8px;
+    border-style: solid;
+    border-color: transparent transparent #eef4ff transparent;
+    z-index: 1;
+}
+
+.speech-bubble.tail-side-left::after {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 20px;
+    border-width: 12px 18px 12px 0;
+    border-style: solid;
+    border-color: transparent #1a1a1a transparent transparent;
+}
+.speech-bubble.tail-side-left::before {
+    content: "";
+    position: absolute;
+    right: calc(100% - 5px);
+    top: 25px;
+    border-width: 8px 13px 8px 0;
+    border-style: solid;
+    border-color: transparent #eef4ff transparent transparent;
+    z-index: 1;
+}
+
+.speech-bubble.tail-side-right::after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 20px;
+    border-width: 12px 0 12px 18px;
+    border-style: solid;
+    border-color: transparent transparent transparent #1a1a1a;
+}
+.speech-bubble.tail-side-right::before {
+    content: "";
+    position: absolute;
+    left: calc(100% - 5px);
+    top: 25px;
+    border-width: 8px 0 8px 13px;
+    border-style: solid;
+    border-color: transparent transparent transparent #eef4ff;
+    z-index: 1;
+}
+.speech-bubble.tail-left::after,  .speech-bubble.tail-left::before  { left: var(--tail-offset, 30px); }
+.speech-bubble.tail-right::after, .speech-bubble.tail-right::before { right: var(--tail-offset, 30px); }
+
+.thought-bubble {
+    background: #f3e8ff;
+    border: 3px dashed #6741d9;
+    border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;
+}
+
+.thought-bubble .bubble-speaker {
+    color: #6741d9;
+}
+
+.thought-bubble.pos-bottom-left, .thought-bubble.pos-bottom-right { margin-top: 14px; }
+.thought-bubble.pos-top-left, .thought-bubble.pos-top-right { margin-bottom: 14px; }
+
+.thought-bubble::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #f3e8ff;
+    border: 3px dashed #6741d9;
+    border-radius: 50%;
+}
+.thought-bubble::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #f3e8ff;
+    border: 2px dashed #6741d9;
+    border-radius: 50%;
 }
 
 
-/* =========================
-   COVER PAGE
-========================= */
+.thought-bubble.pos-bottom-left::after,  .thought-bubble.pos-bottom-right::after  { top: -22px; }
+.thought-bubble.pos-bottom-left::before, .thought-bubble.pos-bottom-right::before { top: -34px; }
+
+
+.thought-bubble.pos-top-left::after,  .thought-bubble.pos-top-right::after  { bottom: -22px; }
+.thought-bubble.pos-top-left::before, .thought-bubble.pos-top-right::before { bottom: -30px; }
+
+.thought-bubble.pos-bottom-left::after,  .thought-bubble.pos-bottom-left::before,
+.thought-bubble.pos-top-left::after,     .thought-bubble.pos-top-left::before  { left: var(--tail-offset, 26px);}
+.thought-bubble.pos-bottom-right::after, .thought-bubble.pos-bottom-right::before,
+.thought-bubble.pos-top-right::after,    .thought-bubble.pos-top-right::before { right: var(--tail-offset, 26px); }
+
+
 
 .cover-layout {
     display: flex;
@@ -204,9 +348,6 @@ body {
 }
 
 
-/* =========================
-   STORY LAYOUT
-========================= */
 
 .story-layout .story-box {
     order: 1;
@@ -217,14 +358,6 @@ body {
     order: 2;
 }
 
-.story-layout .dialog-box {
-    order: 3;
-}
-
-
-/* =========================
-   BUTTONS
-========================= */
 
 button {
     margin: 10px;
@@ -246,10 +379,6 @@ i {
 }
 
 
-/* =========================
-   ANIMATION
-========================= */
-
 .slide-left {
     transform: translateX(-100%);
 }
@@ -258,10 +387,6 @@ i {
     transform: translateX(100%);
 }
 
-
-/* =========================
-   MOBILE
-========================= */
 
 @media (max-width: 768px) {
 
@@ -290,12 +415,19 @@ i {
 
     .page-scene {
         height: auto;
+        min-height: 320px;
     }
 
     #page-image {
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+
+    .speech-bubble, .thought-bubble {
+        max-width: 60%;
+        font-size: 0.85rem;
+        padding: 6px 10px;
     }
 
     .cover-layout {

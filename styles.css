@@ -23,9 +23,10 @@ body {
 }
 
 .book-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .book {
@@ -57,7 +58,7 @@ body {
 
 .page-scene {
     position: relative;
-    flex: 1;              
+    flex: 1;
 }
 
 .image-frame {
@@ -386,9 +387,27 @@ i {
 .slide-right {
     transform: translateX(100%);
 }
+#prev-btn, #next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    padding: 4px;
+}
 
+#prev-btn { left: 8px; }
+#next-btn { right: 8px; }
 
 @media (max-width: 768px) {
+
+    .story-layout .page-scene {
+        height: 35vh;
+        min-height: 620px;
+        border-radius: 16px;
+    }
 
     body {
         height: auto;
@@ -399,7 +418,6 @@ i {
 
     .book-wrapper {
         width: 100%;
-        flex-direction: column;
         align-items: center;
         gap: 8px;
     }

@@ -401,6 +401,21 @@ i {
 #prev-btn { left: 8px; }
 #next-btn { right: 8px; }
 
+#lang-toggle {
+    position: absolute;
+    top: -18px;
+    right: 8px;
+    z-index: 6;
+    border: 2px solid #1a1a1a;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.85);
+    font-family: "Kalam", cursive;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 4px 12px;
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
 
     .story-layout .page-scene {

@@ -26,7 +26,7 @@ const pages = [
         text: { es: `Nunca me he hecho una prueba rápida. ¿Qué detectan?`, en: `I have never taken a quick test. What do these tests detect?` },
         position: "top-left",
         offset: { top: "0%", left: "20%" },
-        offsetMobile: { top: "20%", left: "0%" },
+        offsetMobile: { top: "17%", left: "0%" },
         tail: "up-left",
         tailOffset: "30%"
       },
@@ -120,7 +120,7 @@ const pages = [
         kind: "speech",
         text: { es: `Si me siento bien, ¿cómo sé cuándo debo hacerme las pruebas?`, en: `If I feel well, how do I know when I should get tested?` },
         position: "top-left",
-        offset: { top: "2%", left: "0%" },
+        offset: { top: "2%", left: "10%" },
         offsetMobile: { top: "20%", left: "0%" },
         tail: "up-left",
         tailOffset: "28%"
@@ -184,7 +184,7 @@ const pages = [
         text: { es: `Queremos comenzar esta nueva etapa de nuestra relación con tranquilidad.`, en: `We want to initiate this new step in our relationship with peace of mind.` },
         position: "bottom-left",
         offset: { bottom: "0%", left: "0%" },
-        offsetMobile: { bottom: "20%", left: "0%" },
+        offsetMobile: { bottom: "30%", left: "0%" },
         tailOffset: "35%"
       },
       {
@@ -193,7 +193,7 @@ const pages = [
         text: { es: `Hacernos las pruebas también es una forma de cuidarnos.`, en: `Getting tested is another way to take care of ourselves.` },
         position: "bottom-right",
         offset: { bottom: "0%", right: "20%" },
-        offsetMobile: { bottom: "30%", right: "0%" },
+        offsetMobile: { bottom: "45%", right: "0%" },
         tailOffset: "80%"
       }
     ]
@@ -213,8 +213,8 @@ const pages = [
         kind: "speech",
         text: { es: `¿Qué significa "no reactivo"?`, en: `What does "non-reactive" mean?` },
         position: "bottom-left",
-        offset: { bottom: "5%", left: "0%" },
-        offsetMobile: { bottom: "28%", left: "0%" },
+        offset: { bottom: "1%", left: "3%" },
+        offsetMobile: { bottom: "25%", left: "3%" },
         tail: "down-left",
         tailOffset: "20%"
       },
@@ -224,7 +224,7 @@ const pages = [
         text: { es: `Significa que no se detectaron los marcadores de VIH, VHC ni sífilis.`, en: `It means the markers for HIV, Hepatitis C and Syphilis weren't detected.` },
         position: "bottom-right",
         offset: { bottom: "0%", right: "5%" },
-        offsetMobile: { bottom: "12%", right: "0%" },
+        offsetMobile: { bottom: "8%", right: "2%" },
         tail: "down-right",
         tailOffset: "15%"
       }
@@ -268,7 +268,7 @@ const pages = [
         text: { es: `Un resultado reactivo por prueba rápida no es un diagnóstico definitivo. Se necesita confirmación, valoración médica y, si es necesario, tratamiento.`, en: `A reactive result on the quick test needs confirmation, it is not a final diagnosis. Confirmation, a medical consult, and treatment could be needed.` },
         position: "bottom-right",
         offset: { bottom: "0%", right: "43%" },
-        offsetMobile: { bottom: "18%", left: "2%" },
+        offsetMobile: { bottom: "10%", left: "2%" },
         tail: "right"
       }
     ]

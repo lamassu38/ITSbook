@@ -29,10 +29,6 @@
 
           <button id="lang-toggle" aria-label="Cambiar idioma / Switch language">EN</button>
 
-          <button id="prev-btn">
-            <i class="fas fa-arrow-circle-left"></i>
-          </button>
-
           <div id="book" class="book">
 
             <div class="page-scene">
@@ -47,8 +43,17 @@
                 <p id="cover-text"></p>
               </div>
 
-            <div id="dialog-box" class="dialog-box"></div> 
-                
+              <div class="page-nav">
+                <button id="prev-btn" type="button" class="page-nav-btn" aria-label="Página anterior / Previous page">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="next-btn" type="button" class="page-nav-btn" aria-label="Página siguiente / Next page">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+
+            <div id="dialog-box" class="dialog-box"></div>
+
             </div>
 
             <div id="story-box" class="story-box">
@@ -58,10 +63,6 @@
             </div>
 
           </div>
-
-          <button id="next-btn">
-            <i class="fas fa-arrow-circle-right"></i>
-          </button>
 
         </div>
     </body>

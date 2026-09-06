@@ -90,14 +90,15 @@ function renderBubbles(bubbles) {
   bubbles.forEach(bubble => {
     const bubbleEl = document.createElement("div");
     bubbleEl.classList.add(bubble.kind === "thought" ? "thought-bubble" : "speech-bubble");
-    bubbleEl.classList.add("pos-" + (bubble.position || "bottom-left"));
+    bubbleEl.classList.add("pos-" + (pickValue(bubble, "position") || "bottom-left"));
 
-    if (bubble.kind !== "thought" && bubble.tail) {
-      if (bubble.tail.includes("-")) {
-    const [vertical, horizontal] = bubble.tail.split("-");
+    const tailValue = pickValue(bubble, "tail");
+    if (bubble.kind !== "thought" && tailValue) {
+      if (tailValue.includes("-")) {
+    const [vertical, horizontal] = tailValue.split("-");
     bubbleEl.classList.add("tail-" + vertical, "tail-" + horizontal);
   } else {
-    bubbleEl.classList.add("tail-side-" + bubble.tail); // "left" o "right"
+    bubbleEl.classList.add("tail-side-" + tailValue); // "left" o "right"
   }
     }
 
@@ -179,8 +180,8 @@ function updateLayout(page) {
   els.storyBox.style.display = hasStoryText ? "block" : "none";
   els.dialogBox.style.display = hasBubbles ? "block" : "none";
 
-  els.prevBtn.style.visibility = isCover ? "hidden" : "visible";
-  els.nextBtn.style.visibility = currentPage === pages.length - 1 ? "hidden" : "visible";
+  els.prevBtn.disabled = isCover;
+  els.nextBtn.disabled = currentPage === pages.length - 1;
 
   if (isCover) {
     els.coverTitle.textContent = t(page.title);
@@ -243,6 +244,11 @@ function changePage(direction) {
 
 els.prevBtn.addEventListener("click", () => changePage("prev"));
 els.nextBtn.addEventListener("click", () => changePage("next"));
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowLeft") changePage("prev");
+  if (e.key === "ArrowRight") changePage("next");
+});
 
 if (els.langToggle) {
   els.langToggle.textContent = currentLang === "es" ? "EN" : "ES";

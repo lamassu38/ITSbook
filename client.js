@@ -13,6 +13,7 @@ const els = {
   prevBtn: document.getElementById("prev-btn"),
   nextBtn: document.getElementById("next-btn"),
   langToggle: document.getElementById("lang-toggle"),
+  langToggleLabel: document.getElementById("lang-toggle-label"),
 };
 
 const LANG_KEY = "itsbook-lang";
@@ -66,8 +67,8 @@ function setLanguage(lang) {
   currentLang = lang;
   localStorage.setItem(LANG_KEY, lang);
   document.documentElement.lang = lang;
-  if (els.langToggle) {
-    els.langToggle.textContent = lang === "es" ? "EN" : "ES";
+  if (els.langToggleLabel) {
+    els.langToggleLabel.textContent = lang === "es" ? "EN" : "ES";
   }
   renderPage();
 }
@@ -250,8 +251,8 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") changePage("next");
 });
 
-if (els.langToggle) {
-  els.langToggle.textContent = currentLang === "es" ? "EN" : "ES";
+if (els.langToggle && els.langToggleLabel) {
+  els.langToggleLabel.textContent = currentLang === "es" ? "EN" : "ES";
   els.langToggle.addEventListener("click", () => {
     setLanguage(currentLang === "es" ? "en" : "es");
   });

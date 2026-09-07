@@ -444,14 +444,21 @@ i {
     top: -18px;
     right: 8px;
     z-index: 6;
-    border: 2px solid #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 3px solid #1a1a1a;
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.85);
     font-family: "Kalam", cursive;
     font-weight: 700;
-    font-size: 0.85rem;
-    padding: 4px 12px;
+    font-size: 1.1rem;
+    padding: 5px 10px;
     cursor: pointer;
+}
+
+#lang-toggle i {
+    font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {

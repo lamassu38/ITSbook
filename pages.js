@@ -16,7 +16,7 @@ const pages = [
     type: "story",
     imageUrl: "images/cristianandangelaone.webp",
     imagePosition: "center 50%",
-    imagePositionMobile: "center",
+    imagePositionMobile: "center 95%",
     alt: { es: "Cristian y Angélica conversan con Erika frente al módulo de pruebas rápidas.", en: "Cristian and Angelica talk with Erika in front of the rapid testing tent." },
     narration: { es: `Esta es la historia de Cristian y Angélica. Mientras paseaban por el centro, vieron un módulo de salud con pruebas rápidas. Querían hablar de temas importantes antes de dar el siguiente paso en su relación.`, en: `This is Cristian and Angelica's story. While they were taking a walk near the town center, they saw a health tent. They wanted to talk about serious things before taking the next step in their relationship.` },
     bubbles: [
@@ -48,7 +48,7 @@ const pages = [
     type: "story",
     imageUrl: "images/erikaexplinationone.webp",
     imagePosition: "center 50%",
-    imagePositionMobile: "center 50%",
+    imagePositionMobile: "center 60%",
     alt: { es: "Erika explica a Cristian y Angélica las diferentes causas de algunas infecciones de transmisión sexual.", en: "Erika explains to Cristian and Angelica the different causes of some sexually transmitted infections." },
     narration: { es: `Ya dentro del módulo, Erika les explicó qué infecciones pueden detectar las pruebas rápidas.`, en: `Inside the tent, Erika explained about the infections that can be detected.` },
     bubbles: [
@@ -68,7 +68,7 @@ const pages = [
     id: 3,
     type: "story",
     imageUrl: "images/erikaexplinationquestion.webp",
-    imagePosition: "center 40%",
+    imagePosition: "center 50%",
     imagePositionMobile: "center 15%",
     alt: { es: "Angélica pregunta a Erika sobre las complicaciones de la hepatitis C y la sífilis.", en: "Angelica asks Erika about the complications of Hepatitis C and Syphilis." },
     narration: { es: `Al conocer un poco más sobre estas infecciones, Angélica quiso saber qué podía ocurrir si no se trataban.`, en: `After learning more about these infections, Angelica wanted to know what could happen if someone doesn't get treatment for these infections.` },
@@ -79,7 +79,7 @@ const pages = [
         text: { es: `Sé que el VIH sin tratamiento puede progresar a SIDA. ¿Qué ocurre con la hepatitis C y la sífilis?`, en: `I know HIV without treatment can cause AIDS. What can the consequences of Hepatitis C and Syphilis be?` },
         position: "top-left",
         offset: { top: "5%", left: "7%" },
-        offsetMobile: { top: "15%", left: "0%" },
+        offsetMobile: { top: "10%", left: "0%" },
         tail: "up-right"
       }
     ]
@@ -90,7 +90,7 @@ const pages = [
     type: "story",
     imageUrl: "images/erikaexplinationtwo.webp",
     imagePosition: "center 62%",
-    imagePositionMobile: "center 50%",
+    imagePositionMobile: "center 95%",
     alt: { es: "Erika explica las posibles complicaciones de la hepatitis C y la sífilis.", en: "Erika explains the possible complications of Hepatitis C and Syphilis." },
     narration: { es: `Erika les explicó por qué detectarlas y recibir atención a tiempo puede prevenir complicaciones en el futuro.`, en: `Erika explained to them that detecting and treating these infections on time can prevent complications in the future.` },
     bubbles: [
@@ -111,7 +111,7 @@ const pages = [
     type: "story",
     imageUrl: "images/erikatestingtiming.webp",
     imagePosition: "center 50%",
-    imagePositionMobile: "center 50%",
+    imagePositionMobile: "center 95%",
     alt: { es: "Cristian pregunta cuándo hacerse las pruebas y Erika explica que algunas infecciones pueden no causar síntomas.", en: "Cristian asks when to get tested and Erika explains that some infections may not cause symptoms." },
     narration: { es: `Después de escuchar las posibles complicaciones, Cristian tuvo otra duda: ¿qué pasa cuando una infección no causa síntomas?`, en: `After listening to the possible complications, Cristian had another doubt: What happens when an infection doesn't show any symptoms?` },
     bubbles: [

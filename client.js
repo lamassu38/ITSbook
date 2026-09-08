@@ -3,12 +3,15 @@ const els = {
   pageTitle: document.getElementById("page-title"),
   pageSubtitle: document.getElementById("page-subtitle"),
   pageText: document.getElementById("page-text"),
+  pageDisclaimer: document.getElementById("page-disclaimer"),
+  pageCredits: document.getElementById("page-credits"),
   dialogBox: document.getElementById("dialog-box"),
   storyBox: document.getElementById("story-box"),
   coverOverlay: document.getElementById("cover-overlay"),
   coverTitle: document.getElementById("cover-title"),
   coverSubtitle: document.getElementById("cover-subtitle"),
   coverText: document.getElementById("cover-text"),
+  coverDisclaimer: document.getElementById("cover-disclaimer"),
   book: document.getElementById("book"),
   prevBtn: document.getElementById("prev-btn"),
   nextBtn: document.getElementById("next-btn"),
@@ -81,6 +84,14 @@ function renderContent(page) {
   els.pageTitle.textContent = t(page.title) || "";
   els.pageSubtitle.textContent = t(page.subtitle) || "";
   els.pageText.textContent = t(page.narration) || t(page.text) || "";
+
+  const disclaimer = t(page.disclaimer);
+  els.pageDisclaimer.textContent = disclaimer || "";
+  els.pageDisclaimer.style.display = disclaimer ? "block" : "none";
+
+  const credits = t(page.credits);
+  els.pageCredits.innerHTML = credits || "";
+  els.pageCredits.style.display = credits ? "block" : "none";
 
   renderBubbles(page.bubbles || []);
 }
@@ -188,6 +199,7 @@ function updateLayout(page) {
     els.coverTitle.textContent = t(page.title);
     els.coverSubtitle.textContent = t(page.subtitle);
     els.coverText.textContent = t(page.text);
+    els.coverDisclaimer.textContent = t(page.disclaimer) || "";
   }
 }
 

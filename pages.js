@@ -8,7 +8,8 @@ const pages = [
     imagePositionMobile: "center 50%",
     alt: { es: "Cristian y Angélica leen un folleto sobre pruebas rápidas de ITS junto a un módulo de salud en Parque Fundadores.", en: "Cristian and Angelica read a flyer about rapid STI tests next to a health tent in Parque Fundadores." },
     subtitle: { es: "La historia de Cristian y Angélica", en: "Cristian and Angelica's story" },
-    text: { es: "Guía ilustrada sobre pruebas rápidas para VIH, hepatitis C y sífilis.", en: "Illustrated guide about rapid tests for HIV, Hepatitis C, and Syphilis." }
+    text: { es: "Guía ilustrada sobre pruebas rápidas para VIH, hepatitis C y sífilis.", en: "Illustrated guide about rapid tests for HIV, Hepatitis C, and Syphilis." },
+    disclaimer: { es: "Este folleto tiene fines informativos y de orientación; no sustituye una valoración médica.", en: "This booklet is for informational and orientation purposes only; it does not replace medical evaluation." }
   },
 
   {
@@ -68,7 +69,7 @@ const pages = [
     id: 3,
     type: "story",
     imageUrl: "images/erikaexplinationquestion.webp",
-    imagePosition: "center 50%",
+    imagePosition: "center 42%",
     imagePositionMobile: "center 15%",
     alt: { es: "Angélica pregunta a Erika sobre las complicaciones de la hepatitis C y la sífilis.", en: "Angelica asks Erika about the complications of Hepatitis C and Syphilis." },
     narration: { es: `Al conocer un poco más sobre estas infecciones, Angélica quiso saber qué podía ocurrir si no se trataban.`, en: `After learning more about these infections, Angelica wanted to know what could happen if someone doesn't get treatment for these infections.` },
@@ -78,7 +79,7 @@ const pages = [
         kind: "speech",
         text: { es: `Sé que el VIH sin tratamiento puede progresar a SIDA. ¿Qué ocurre con la hepatitis C y la sífilis?`, en: `I know HIV without treatment can cause AIDS. What can the consequences of Hepatitis C and Syphilis be?` },
         position: "top-left",
-        offset: { top: "5%", left: "7%" },
+        offset: { top: "0%", left: "7%" },
         offsetMobile: { top: "10%", left: "0%" },
         tail: "up-right"
       }
@@ -282,13 +283,15 @@ const pages = [
     imagePositionMobile: "center 15%",
     alt: { es: "Erika mira al lector e invita a la comunidad a solicitar pruebas rápidas, mientras Cristian y Angélica se alejan juntos del módulo.", en: "Erika looks at the reader and invites the community to request rapid tests, while Cristian and Angelica walk away together from the tent." },
     narration: { es: `Cristian y Angélica comprendieron que detectar a tiempo y prevenir complicaciones también son formas de demostrarse afecto.`, en: `Cristian and Angelica understood that early detection can prevent future complications and are also a way to show affection.` },
+    disclaimer: { es: "Recuerda: esta guía es solo orientativa. Si tienes dudas, acércate a tu centro de salud más cercano.", en: "Remember: this guide is for orientation only. If you have questions, visit your nearest health center." },
+    credits: { es: "Historia y diseño: <strong>Erika Contreras</strong> · Corrección de estilo en inglés: <strong>Matthew Schmid</strong>", en: "Story and design: <strong>Erika Contreras</strong> · English style editing: <strong>Matthew Schmid</strong>" },
     bubbles: [
       {
         speaker: "Erika",
         kind: "speech",
         paragraphs: {
           es: ["Tú también puedes acudir por tus pruebas rápidas a estos centros de salud: De lunes a viernes. 8:00 a.m. - 3:00 p.m."],
-          en: ["You can also come get tested at any of our available health centers. Monday through Friday, 8:00 a.m. - 3:00 p.m."]
+          en: ["You can also come get tested at any of our available health centers. Monday through Friday, 8:00 a.m. - 3:30 p.m."]
         },
         listTitle: { es: "Centros disponibles", en: "Available centers" },
         list: ["CAPS Villas del Sol", "CAPS Petén", "CAPS Puerto Aventuras", "CAPS Colosio"],

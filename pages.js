@@ -6,7 +6,7 @@ const pages = [
     imageUrl: "images/cristianandangelacover.webp",
     imagePosition: "center 50%",
     imagePositionMobile: "center 50%",
-    alt: { es: "Cristian y Angélica leen un folleto sobre pruebas rápidas de ITS junto a un módulo de salud en Parque Fundadores.", en: "Cristian and Angelica read a flyer about rapid STI tests next to a health tent in Parque Fundadores." },
+    alt: { es: "Cristian y Angélica leen un folleto sobre pruebas rápidas de ETS junto a un módulo de salud en Parque Fundadores.", en: "Cristian and Angelica read a flyer about rapid STD tests next to a health tent in Parque Fundadores." },
     subtitle: { es: "La historia de Cristian y Angélica", en: "Cristian and Angelica's story" },
     text: { es: "Guía ilustrada sobre pruebas rápidas para VIH, hepatitis C y sífilis.", en: "Illustrated guide about rapid tests for HIV, Hepatitis C, and Syphilis." },
     disclaimer: { es: "Este folleto tiene fines informativos y de orientación; no sustituye una valoración médica.", en: "This booklet is for informational and orientation purposes only; it does not replace medical evaluation." }
@@ -50,13 +50,13 @@ const pages = [
     imageUrl: "images/erikaexplinationone.webp",
     imagePosition: "center 50%",
     imagePositionMobile: "center 60%",
-    alt: { es: "Erika explica a Cristian y Angélica las diferentes causas de algunas infecciones de transmisión sexual.", en: "Erika explains to Cristian and Angelica the different causes of some sexually transmitted infections." },
-    narration: { es: `Ya dentro del módulo, Erika les explicó qué infecciones pueden detectar las pruebas rápidas.`, en: `Inside the tent, Erika explained about the infections that can be detected.` },
+    alt: { es: "Erika explica a Cristian y Angélica las diferentes causas de algunas enfermedades de transmisión sexual.", en: "Erika explains to Cristian and Angelica the different causes of some sexually transmitted diseases." },
+    narration: { es: `Ya dentro del módulo, Erika les explicó qué enfermedades pueden detectar las pruebas rápidas.`, en: `Inside the tent, Erika explained about the diseases that can be detected.` },
     bubbles: [
       {
         speaker: "Erika",
         kind: "speech",
-        text: { es: `No todas las ITS tienen la misma causa. El VIH y el VHC son virus; la sífilis es bacteriana.`, en: `Not all sexually transmitted infections (STI) have the same cause. HIV and Hepatitis C are viruses; Syphilis is bacterial.` },
+        text: { es: `No todas las ETS tienen la misma causa. El VIH y el VHC son virus; la sífilis es bacteriana.`, en: `Not all sexually transmitted diseases (STD) have the same cause. HIV and Hepatitis C are viruses; Syphilis is bacterial.` },
         position: "top-right",
         offset: { top: "0%", right: "5%" },
         offsetMobile: { top: "18%", right: "0%" },
@@ -72,7 +72,7 @@ const pages = [
     imagePosition: "center 42%",
     imagePositionMobile: "center 15%",
     alt: { es: "Angélica pregunta a Erika sobre las complicaciones de la hepatitis C y la sífilis.", en: "Angelica asks Erika about the complications of Hepatitis C and Syphilis." },
-    narration: { es: `Al conocer un poco más sobre estas infecciones, Angélica quiso saber qué podía ocurrir si no se trataban.`, en: `After learning more about these infections, Angelica wanted to know what could happen if someone doesn't get treatment for these infections.` },
+    narration: { es: `Al conocer un poco más sobre estas enfermedades, Angélica quiso saber qué podía ocurrir si no se trataban.`, en: `After learning more about these diseases, Angelica wanted to know what could happen if someone doesn't get treatment for these diseases.` },
     bubbles: [
       {
         speaker: "Angélica",
@@ -93,7 +93,7 @@ const pages = [
     imagePosition: "center 62%",
     imagePositionMobile: "center 95%",
     alt: { es: "Erika explica las posibles complicaciones de la hepatitis C y la sífilis.", en: "Erika explains the possible complications of Hepatitis C and Syphilis." },
-    narration: { es: `Erika les explicó por qué detectarlas y recibir atención a tiempo puede prevenir complicaciones en el futuro.`, en: `Erika explained to them that detecting and treating these infections on time can prevent complications in the future.` },
+    narration: { es: `Erika les explicó por qué detectarlas y recibir atención a tiempo puede prevenir complicaciones en el futuro.`, en: `Erika explained to them that detecting and treating these diseases on time can prevent complications in the future.` },
     bubbles: [
       {
         speaker: "Erika",
@@ -113,8 +113,8 @@ const pages = [
     imageUrl: "images/erikatestingtiming.webp",
     imagePosition: "center 50%",
     imagePositionMobile: "center 95%",
-    alt: { es: "Cristian pregunta cuándo hacerse las pruebas y Erika explica que algunas infecciones pueden no causar síntomas.", en: "Cristian asks when to get tested and Erika explains that some infections may not cause symptoms." },
-    narration: { es: `Después de escuchar las posibles complicaciones, Cristian tuvo otra duda: ¿qué pasa cuando una infección no causa síntomas?`, en: `After listening to the possible complications, Cristian had another doubt: What happens when an infection doesn't show any symptoms?` },
+    alt: { es: "Cristian pregunta cuándo hacerse las pruebas y Erika explica que algunas enfermedades pueden no causar síntomas.", en: "Cristian asks when to get tested and Erika explains that some diseases may not cause symptoms." },
+    narration: { es: `Después de escuchar las posibles complicaciones, Cristian tuvo otra duda: ¿qué pasa cuando una enfermedad no causa síntomas?`, en: `After listening to the possible complications, Cristian had another doubt: What happens when a disease doesn't show any symptoms?` },
     bubbles: [
       {
         speaker: "Cristian",
@@ -129,7 +129,7 @@ const pages = [
       {
         speaker: "Erika",
         kind: "speech",
-        text: { es: `Algunas infecciones no causan síntomas. Si tuviste una posible exposición de riesgo, acércate al personal de salud para recibir orientación.`, en: `Some infections don't show any symptoms. If you had a possible risk exposure, you should talk to health center staff to find out when you should get tested.` },
+        text: { es: `Algunas enfermedades no causan síntomas. Si tuviste una posible exposición de riesgo, acércate al personal de salud para recibir orientación.`, en: `Some diseases don't show any symptoms. If you had a possible risk exposure, you should talk to health center staff to find out when you should get tested.` },
         position: "bottom-right",
         offset: { bottom: "0%", right: "14%" },
         offsetMobile: { bottom: "8%", right: "0%" },
